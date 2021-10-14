@@ -1,15 +1,18 @@
 import marvel from '../../assets/img/marvel.png';
 
-import styles from './landingPage.css'
+import { Link } from 'react-router-dom'
+
+import styles from './landingPage.module.css'
 
 const LandingPage = () => {
     return(
-        <section>
-            <div>
-                <img src={marvel} alt="Logo de Marvel" />
+        <section className={styles.containerLandingPage}>
+            <div className={styles.containerImg} >
+                <img className={styles.img} src={marvel} alt="Logo de Marvel" />
             </div>
-            <div>
-
+            <div className={styles.containerButton} >
+                <Link className={styles.btn} to="/home" >Home</Link>
+                <Link className={styles.btn} to="/about" >About</Link>
             </div>
         </section>
     )
