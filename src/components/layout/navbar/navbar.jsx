@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './../Navbar/Navbar.css';
+import './navbar.css';
+
+import marvel from '../../../assets/img/marvel.png'
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -8,13 +10,18 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  /*
+  <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          Marvel
+          <i className='fas fa-book-reader' />
+        </Link>
+  */
 
   return (
     <>
       <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          Marvel
-          <i className='fas fa-book-reader' />
+        <Link to='/' className='navbarImg' onClick={closeMobileMenu}>
+          <img src={marvel} alt="" />
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

@@ -16,6 +16,10 @@
   font-size: 2rem;
 }
 
+.navbarImg img {
+  width: 8em;
+}
+
 .fa-firstdraft {
   margin-left: 0.5rem;
   font-size: 1.6rem;

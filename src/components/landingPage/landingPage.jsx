@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import styles from './landingPage.module.css'
 
 const LandingPage = () => {
+
     return(
         <section className={styles.containerLandingPage}>
             <div className={styles.containerImg} >
