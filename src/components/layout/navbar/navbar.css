@@ -54,6 +54,42 @@
   transition: all 0.2s ease-out;
 }
 
+/*barra de busqueda*/
+.nav-search{
+  width: 300px;
+  margin-top: 15px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+.nav-search input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.nav-search .icon{
+  position: absolute;
+  top: 12%;
+  left:5%;
+  margin-left: 5px;
+  margin-top: 5px;
+  z-index: 1;
+  color: #4f5b66;
+}
+.nav-search input#search:hover, .nav-search input#search:focus, .nav-search input#search:active{
+  outline:none;
+  background: #ffffff;
+}
+/*      fin de barra           */
+
 .fa-bars {
   color: #fff;
 }
@@ -75,17 +111,20 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: 100%;
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    z-index: 102;
   }
 
   .nav-menu.active {
     background: #242222;
-    left: 0;
+    width: 100%;
+    height: 50vh;
+    left: -40px;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 103;
@@ -97,6 +136,41 @@
     width: 100%;
     display: table;
   }
+  /*barra de busqueda*/
+.nav-search{
+  text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  
+}
+.nav-search input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.nav-search .icon{
+  position: absolute;
+  top: 35%;
+  left:5%;
+  margin-left: 5px;
+  margin-top: 5px;
+  z-index: 1;
+  color: #4f5b66;
+}
+.nav-search input#search:hover, .nav-search input#search:focus, .nav-search input#search:active{
+  outline:none;
+  background: #ffffff;
+}
+/*     fin de barrra */
 
   .nav-links:hover {
     background-color: #1888ff;

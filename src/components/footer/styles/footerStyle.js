@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 40px 30px;
   background: radial-gradient(circle, rgba(255, 99, 71, 1) 0%, rgba(26, 23, 23) 100%);
-  
+  z-index: 100;
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
@@ -40,7 +40,7 @@ export const Link = styled.a`
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;
-  z-index:130;
+  z-index:99;
   &:hover {
       color: #ff9c00;
       transition: 200ms ease-in;
