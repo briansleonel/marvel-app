@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, useLocation } from "react-router-dom";
 import About from "./components/About/About";
 import { FooterContainer } from "./components/footer/footer";
 import LandingPage from "./components/landingPage/landingPage";
+import Contacto from "./components/layout/contacto/Contacto";
 import Error404 from "./components/layout/Error404";
 import Navbar from "./components/layout/navbar/navbar";
 
@@ -22,7 +23,11 @@ function App() {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        
+
+        <Route path="/contacto" exact>
+             <Contacto />
+          </Route>
+
           <Route path="/about" exact>
              <About />
           </Route>
