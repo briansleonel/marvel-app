@@ -138,15 +138,20 @@
   }
   /*barra de busqueda*/
 .nav-search{
+  top: 1.5rem;
+  left: 1.9rem;
   text-align: center;
     padding: 2rem;
-    width: 100%;
     display: table;
   
 }
-.nav-search input#search{
-  width: 300px;
+.nav-search input{
+  margin: 0 auto;
+  width: 600px;
   height: 50px;
+}
+.nav-search input#search{
+  
   background: #2b303b;
   border: none;
   font-size: 10pt;
@@ -161,7 +166,7 @@
   position: absolute;
   top: 35%;
   left:5%;
-  margin-left: 5px;
+  margin-left: 35px;
   margin-top: 5px;
   z-index: 1;
   color: #4f5b66;
