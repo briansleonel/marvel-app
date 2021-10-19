@@ -17,14 +17,14 @@ const ContenedorFiltros = styled.div`
 `;
 const ContenedorFormulario = styled.div`
 background: #fff;
-width: 90%;
-max-width: 57rem; /*1110px*/
+width: 60%;
+max-width: 50rem; /*1110px*/
 height: 90vh;
-max-height: 50rem;  /* 80px */
+max-height: 80rem;  /* 80px */
 overflow-y: auto;
 box-shadow: 0px 1.25rem 2.5rem rgba(0,0,0,.05);
 border-radius: 0.625rem; /* 10px */
-margin: auto;
+margin: 20px auto 20px auto;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -32,8 +32,10 @@ position: relative;
 z-index: 100;
 
 @media(max-width: 60rem){ /* 950px */
-    height: 95vh;
+    height: 85vh;
+    max-height: 40rem;  /* 80px */
     max-height: none;
+    overflow-y:auto;
 }
 `;
 const ContenedorTexto = styled.div`
@@ -43,20 +45,20 @@ const ContenedorTexto = styled.div`
     outline: none;
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 1.0rem; /* 24px */
+        font-size: 0.8rem; /* 24px */
     }
 `;
 const Formulario = styled.form`
     padding: 0 2.5rem; /* 40px */
  
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     input {
         width: 100%;
         text-align: center;
-        padding: 2.5rem 0;
+        padding: 2.1rem 0;
         font-family: 'Work Sans', sans-serif;
         &::placeholder {
             color: rgba(0,0,0,.2);
@@ -69,14 +71,14 @@ const Formulario = styled.form`
 `;
  
 const Input = styled.input`
-    font-size: 1.2rem; /* 40px */
+    font-size: 1.0rem; /* 40px */
     text-transform: uppercase;
     border: none;
     border-bottom: 2px solid #F6F1F0;
     outline: none;
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 1.2rem; /* 24px */
+        font-size: 0.8rem; /* 24px */
     }
 `;
  
@@ -91,7 +93,7 @@ const ContenedorBoton = styled.div`
     margin: 0;  /* 40px */
 `;
 const Boton = styled(Link)`
-   
+
     background: ${(props) => props.disabled ? 'gray' : props.rojo ? '#D30000' : '#006924'};
     width: 15.62rem
     margin-left: 1.25rem; /* 20px */
@@ -99,11 +101,12 @@ const Boton = styled(Link)`
     border-radius: 0.625rem; /* 10px */
     color: #fff;
     font-family: 'Work Sans', sans-serif;
-    height: 2.5rem; /* 60px */
-    padding: 1.25rem 1.87rem; /* 20px 30px */
-    font-size: 1.25rem; /* 20px */
+    height: 2.0rem; /* 60px */
+    padding: 0.05rem 1.60rem; /* 20px 30px */
+    font-size: 1.0rem; /* 20px */
     font-weight: 500;
-    cursor: pointer;
+    cursor: ${(props) => props.disabled ? 'no-drop' :'pointer'};
+    pointer-events: ${(props) => props.disabled ? 'none' :'auto'};
     text-decoration: none;
     display: inline-flex;
     justify-content: space-between;

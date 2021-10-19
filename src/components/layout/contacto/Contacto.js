@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
+
 import {ContenedorFormulario, Formulario, Input, ContenedorBoton, Boton, ContenedorTexto} from './ElementosDeFormulario';
-import { useHistory } from 'react-router-dom';
-//import Alerta from './Alerta';
+
 
 const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-
 
 const validators= (input) => {
     let errors = {}
@@ -98,8 +97,8 @@ const Contacto = () => {
                {fails.cuerpo ? <p style={{color: 'red'}}> {fails.cuerpo}</p> : <p>Todo ok </p>}
             
               <ContenedorBoton>
-                  <Boton as="button" type="submit" disabled={ fails.email || fails.asunto || fails.mensaje ? true : false  }>Enviar</Boton>
-                  <Boton as="button" type="submit" rojo >Cancelar</Boton>
+                  <Boton  type="submit" to='/home' disabled={ fails.email || fails.asunto || fails.cuerpo ? true : false  }>Enviar</Boton>
+                  <Boton  type="submit" rojo  to='/home' >Cancelar</Boton>
               </ContenedorBoton>
               
            </Formulario>
