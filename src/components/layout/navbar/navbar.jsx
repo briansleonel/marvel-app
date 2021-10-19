@@ -28,8 +28,8 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
        
-          <div class="nav-search">
-              <span class="icon"><i class="fa fa-search"></i></span>
+          <div className="nav-search">
+              <span className="icon"><i className="fa fa-search"></i></span>
               <input type="search" id="search" placeholder="Search..." />
           </div>
 

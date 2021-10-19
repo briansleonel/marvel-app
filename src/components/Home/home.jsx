@@ -9,6 +9,11 @@ const Home = (props) => {
 
     const [searchName, setSearchName] = useState('');
 
+    const resetFilters = () => {
+        setOrder('ASC');
+        setSearchName('');
+    }
+
     return(
         <div className={styles.containerHome}>
             <SideBar 
@@ -16,6 +21,7 @@ const Home = (props) => {
                 setOrder={(state) => setOrder(state)} 
                 searchName={searchName}
                 setSearchName={(state) => setSearchName(state)}
+                reset={resetFilters}
             />
 
             <Section 

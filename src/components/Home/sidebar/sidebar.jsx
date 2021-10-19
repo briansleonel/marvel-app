@@ -7,19 +7,22 @@ const SideBar = (props) => {
 
     const [inputSearchName, setInputSearchName] = useState('');
 
-    console.log(props)
-
     const onChangeOrder = (event) => {
         props.setOrder(event.target.value)
-        //console.log(event.target.value)
     }
 
-    const onChangeSearchName = (event) => {
+    const onHandleChangeSearchName = (event) => {
         setInputSearchName(event.target.value);
     }
 
-    const onClickSearch = () => {
+    const onClickSearch = (event) => {
+        event.preventDefault();
         props.setSearchName(inputSearchName)
+    }
+
+    const onClickResetFilters = (event) => {
+        props.reset()
+        setInputSearchName('');
     }
 
     return(
@@ -49,15 +52,20 @@ const SideBar = (props) => {
                         name='searchName' 
                         className={styles.searchTerm} 
                         placeholder="Buscar por nombre..." 
-                        onChange={(event) => onChangeSearchName(event)} 
+                        onChange={(event) => onHandleChangeSearchName(event)}
+                        value={inputSearchName}
                     />
                     <button 
                         type="button" 
                         className={styles.searchButton} 
-                        onClick={onClickSearch()}
+                        onClick={event => onClickSearch(event)}
                     >
                         <BsSearch />
                     </button>
+                </div>
+
+                <div className={styles.buttonReset}>
+                    <button type='button' onClick={event => onClickResetFilters(event)}>Limpiar filtros</button>
                 </div>
             </form>
             
