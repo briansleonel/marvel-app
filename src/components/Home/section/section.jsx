@@ -7,7 +7,7 @@ import styles from './section.module.css'
 
 const Section = (props) => {
 
-    const [limit, setLimit] = useState(20);
+    //const [limit, setLimit] = useState(20);
     const [response, setResponse] = useState(null);
 
     useEffect(() => {
@@ -27,11 +27,11 @@ const Section = (props) => {
         }
         
         Axios.get(
-            `${URI}&limit=${limit}&orderBy=${props.order === 'ASC' ? 'name' : '-name'}`
+            `${URI}&limit=${props.limit}&orderBy=${props.order === 'ASC' ? 'name' : '-name'}`
         ) 
             .then(res => { setResponse(res.data.data) })
             .catch(err => console.log(err))
-    }, [props.searchName, limit, props.order])
+    }, [props.searchName, props.limit, props.order])
 
     const characters = () => {
         if(response === null) {
@@ -39,7 +39,7 @@ const Section = (props) => {
         } else {
             return response.results.map((element) => {
                 return (
-                    <Link key={element.id} to="/home" className={styles.cardLink}>
+                    <Link key={element.id} to={`/character/${element.id}`} className={styles.cardLink}>
                         <CardCharacter  character={element} />
                     </Link>
                 )
@@ -51,9 +51,26 @@ const Section = (props) => {
     return(
         <section className={styles.sectionContainer}>
             <h2>Personajes</h2>
-            <div className={styles.charactersContainer}>
-                { characters() }
-            </div>
+            
+            {
+                props.searchName ? 
+                    <div className={styles.infoSearch}>
+                        <p>Se muestran <span> {response.results.length} </span> coincidencias para <span>{props.searchName}</span></p>
+                    </div>
+                : <></>
+            }
+
+            {
+                response !== null ?
+                    response.results.length === 0 ?
+                    <SearchEmpty /> :
+                    <div className={styles.charactersContainer}>
+                        { characters() }
+                    </div>
+                : <h5>Cargando...</h5>
+            }
+
+            
         </section>
     )
 }
@@ -69,4 +86,11 @@ const CardCharacter = (props) => {
     )
 }
 
+const SearchEmpty = () => {
+    return(
+        <div className={styles.searchEmpty}>
+            <p>No hay personajes que coincidan con tu búsqueda.</p>
+        </div>
+    )
+}
 export default Section;

@@ -23,6 +23,11 @@ const SideBar = (props) => {
     const onClickResetFilters = (event) => {
         props.reset()
         setInputSearchName('');
+        props.setLimit(20)
+    }
+
+    const onChangeLimit = (event) => {
+        props.setLimit(event.target.value)
     }
 
     return(
@@ -44,6 +49,27 @@ const SideBar = (props) => {
                             <option value="DESC" >Descendente</option>
                         </select>
                     </div>
+                </div>
+
+                <div className={styles.limitCharacters}>
+                    <label htmlFor="limit" className={styles.labelStart}> Mostrar </label>
+
+                    <div className={styles.selectContent}>
+                        <select 
+                            id="limit" 
+                            className={styles.select} 
+                            name='limit' 
+                            value={props.limit}
+                            onChange={event => onChangeLimit(event)}
+                        >
+                            <option value="10" >10</option>
+                            <option value="15" >15</option>
+                            <option value="20" >20</option>
+                            <option value="25" >25</option>
+                            <option value="30" >30</option>
+                        </select>
+                    </div>
+                    <label htmlFor="limit" className={styles.labelEnd}> personajes </label>
                 </div>
 
                 <div className={styles.search}>
@@ -72,20 +98,5 @@ const SideBar = (props) => {
         </section>
     )
 }
-
-/*
-            <div className={styles.searchFilter}>
-                <input type="text" className={styles.input} />
-                <div className={styles.underline}></div>
-                <div className={styles.label}>Buscar por nombre</div>
-                <span className={styles.icon}> <BsSearch /> </span>
-            </div>
-*/
-
-/* 
-<section className={styles.containerSideBar}>
-            <h2>Sidebar</h2>
-        </section>
-        */
 
 export default SideBar;

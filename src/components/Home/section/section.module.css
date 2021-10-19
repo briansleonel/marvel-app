@@ -13,6 +13,8 @@
     font-weight: 500;
     font-style: italic;
     font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
 }
 
 .charactersContainer {
@@ -55,3 +57,28 @@
     font-size: 1em;
     
 }
+
+.infoSearch {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.infoSearch p span {
+    font-weight: 500;
+}
+
+.searchEmpty {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    margin: 2em auto;
+}
+
+
+
+
+
+
+
+
+
