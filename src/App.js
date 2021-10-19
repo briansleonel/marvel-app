@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { BrowserRouter, Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import About from "./components/About/About";
 import { FooterContainer } from "./components/footer/footer";
+import Home from "./components/Home/home";
 import LandingPage from "./components/landingPage/landingPage";
 import Contacto from "./components/layout/contacto/Contacto";
 import Error404 from "./components/layout/Error404";
@@ -22,6 +23,10 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <LandingPage />
+        </Route>
+
+        <Route path="/home" exact>
+          <Home />
         </Route>
 
         <Route path="/contacto" exact>
