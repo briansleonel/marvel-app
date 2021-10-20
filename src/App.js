@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import About from "./components/About/About";
 import { FooterContainer } from "./components/footer/footer";
+import Character from "./components/Home/character/character";
 import Home from "./components/Home/home";
 import LandingPage from "./components/landingPage/landingPage";
 import Contacto from "./components/layout/contacto/Contacto";
@@ -30,14 +31,16 @@ function App() {
         </Route>
 
         <Route path="/contacto" exact>
-             <Contacto />
-          </Route>
+          <Contacto />
+        </Route>
 
-          <Route path="/about" exact>
-             <About />
-          </Route>
+        <Route path="/about" exact>
+          <About />
+        </Route>
 
-          <Route component={Error404}/>
+        <Route path='/character/:id' component={Character} />
+
+        <Route component={Error404}/>
       </Switch>
 
       { location.pathname === '/' ? <></> : <FooterContainer /> }

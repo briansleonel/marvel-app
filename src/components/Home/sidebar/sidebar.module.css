@@ -67,6 +67,21 @@
     border: none;
 }
 
+.limitCharacters {
+    display: flex;
+    font-weight: 500;
+    margin-top: 2em;
+}
+
+.labelStart {
+    padding-right: .5em;
+}
+
+.labelEnd {
+    padding-left: .5em;
+}
+
+
 .search {
     width: 100%;
     position: relative;
