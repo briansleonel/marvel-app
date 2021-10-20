@@ -18,13 +18,13 @@ const About = () => {
         Desarrollador de Aplicaciones
       </h4>
       <p>
-        <b>Carrera: </b> Ingenieria Informática
+        <b>Carrera: </b> Analista Programador Universitario
       </p>
       <p>
-        <b>Edad: </b> 25
+        <b>Edad: </b> 22
       </p>
       <p>
-        <b>Correo: </b> brianleonel@gmail.com
+        <b>Correo: </b> gonzalezbrianleonel76@gmail.com
       </p>
       <p>
         <b>Hobby: </b> Programar en mis tiempos libres

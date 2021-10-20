@@ -14,7 +14,7 @@ const Section = (props) => {
         Axios.get(
             `${process.env.REACT_APP_API_URL}/characters?ts=${process.env.REACT_APP_TS}&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_API_HASH}`
         )
-            .then(res => { setResponse(res.data.data) })
+            .then(res => { setResponse(res.data) })
             .catch(err => console.log(err))
         
     }, [])
@@ -29,7 +29,8 @@ const Section = (props) => {
         Axios.get(
             `${URI}&limit=${props.limit}&orderBy=${props.order === 'ASC' ? 'name' : '-name'}`
         ) 
-            .then(res => { setResponse(res.data.data) })
+            .then(res => { console.log(res.data)
+                setResponse(res.data) })
             .catch(err => console.log(err))
     }, [props.searchName, props.limit, props.order])
 
@@ -37,7 +38,7 @@ const Section = (props) => {
         if(response === null) {
             return <h4>Vacio</h4>
         } else {
-            return response.results.map((element) => {
+            return response.data.results.map((element) => {
                 return (
                     <Link key={element.id} to={`/character/${element.id}`} className={styles.cardLink}>
                         <CardCharacter  character={element} />
@@ -52,21 +53,28 @@ const Section = (props) => {
         <section className={styles.sectionContainer}>
             <h2>Personajes</h2>
             
+            
             {
-                props.searchName ? 
+                props.searchName && response !== null ? 
                     <div className={styles.infoSearch}>
-                        <p>Se muestran <span> {response.results.length} </span> coincidencias para <span>{props.searchName}</span></p>
+                        <p>Se muestran <span> {response.data.results.length} </span> coincidencias para <span>{props.searchName}</span></p>
                     </div>
                 : <></>
             }
 
             {
                 response !== null ?
-                    response.results.length === 0 ?
+                    response.data.results.length === 0 ?
                     <SearchEmpty /> :
-                    <div className={styles.charactersContainer}>
-                        { characters() }
-                    </div>
+                    <>
+                        <div className={styles.charactersContainer}>
+                            { characters() }
+                        </div>
+
+                        <div className={styles.dataProvider}>
+                            <a href="http://marvel.com\"> {response.attributionText} </a>
+                        </div>
+                    </>
                 : <h5>Cargando...</h5>
             }
 

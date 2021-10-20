@@ -38,7 +38,7 @@ function App() {
           <About />
         </Route>
 
-        <Route path='/character/:id' component={Character} />
+        <Route path='/character/:idCharacter' component={Character} />
 
         <Route component={Error404}/>
       </Switch>
