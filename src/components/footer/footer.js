@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Footer from './index'
 import Icon from './icons'
 import logo from '../../assets/img/logo.png';
+import { Link } from 'react-router-dom';
+
 export function FooterContainer() {
     return (
         <>
@@ -10,18 +12,17 @@ export function FooterContainer() {
             <Footer.Wrapper>
             <Footer.Row>
                 <Footer.Column>
-                    <Footer.Logo><img className="Image" src={logo} alt="Logo" /></Footer.Logo>
+                    <Footer.Logo><Link to='home'><img className="Image" href="#" src={logo} alt="Logo" /></Link></Footer.Logo>
                 </Footer.Column>
 
                 <Footer.Column>
-                <Footer.Title>Acerca de</Footer.Title>
-                    <Footer.Link href="#">Nosotros ABout1</Footer.Link>
-                    <Footer.Link href="#">Nosotros About2</Footer.Link>
+                <Footer.Title>Nosotros</Footer.Title>
+                    <Footer.Link href={"/about"}>About</Footer.Link>
                 </Footer.Column>
 
                 <Footer.Column>
                 <Footer.Title>Contacto</Footer.Title>
-                    <Footer.Link href="#">Contacto</Footer.Link>
+                    <Footer.Link href={"/contacto"}>Contacto</Footer.Link>
                 </Footer.Column>
 
                 <Footer.Column>

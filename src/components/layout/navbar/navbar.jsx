@@ -27,12 +27,12 @@ function Navbar() {
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-       
+       {/*
           <div className="nav-search">
               <span className="icon"><i className="fa fa-search"></i></span>
               <input type="search" id="search" placeholder="Search..." />
           </div>
-
+        */}
           <li className='nav-item'>
             <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
               Home
