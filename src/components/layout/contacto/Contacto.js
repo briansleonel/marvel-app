@@ -8,12 +8,18 @@ import {
   Boton,
   ContenedorTexto,
   Titulo,
+  Parrafo
 } from "./ElementosDeFormulario";
 
 const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 
 const validators = (input) => {
   let errors = {};
+  if (!input.username) {
+    errors.username = "Se requiere un nombre";
+  } else if (input.username.length < 3) {
+    errors.username = "No puede tener menos de 3 caracteres";
+  }
   if (!input.email) {
     errors.email = "Se requiere un email";
   } else if (!expresionRegular.test(input.email)) {
@@ -34,12 +40,14 @@ const validators = (input) => {
 
 const Contacto = () => {
   const [state, setState] = useState({
+    username: "",  
     email: "",
     asunto: "",
     cuerpo: "",
   });
 
   const [fails, setFails] = useState({
+    username: "Debes ingresar un nombre",
     email: "Debes ingresar un correo valido",
     asunto: "Debes ingresar un asunto",
     cuerpo: "Debe ingresar un mensaje",
@@ -71,6 +79,18 @@ const Contacto = () => {
           <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
         </ContenedorTexto>
         <Formulario onSubmit={handleSubmit}>
+        <Input
+            type="text"
+            name="username"
+            placeholder="Tu nombre..."
+            value={state.username}
+            onChange={handleChange}
+          />
+          {fails.username ? (
+            <Parrafo rojo> {fails.username}</Parrafo>
+          ) : (
+            <Parrafo>👌ok </Parrafo>
+          )}
           <Input
             type="email"
             name="email"
@@ -79,9 +99,9 @@ const Contacto = () => {
             onChange={handleChange}
           />
           {fails.email ? (
-            <p style={{ color: "red" }}> {fails.email}</p>
+            <Parrafo rojo> {fails.email}</Parrafo>
           ) : (
-            <p>Todo ok </p>
+            <Parrafo>👌ok </Parrafo>
           )}
           <Input
             type="text"
@@ -91,9 +111,9 @@ const Contacto = () => {
             onChange={handleChange}
           />
           {fails.asunto ? (
-            <p style={{ color: "red" }}> {fails.asunto}</p>
+            <Parrafo rojo> {fails.asunto}</Parrafo>
           ) : (
-            <p>Todo ok </p>
+            <Parrafo>👌ok </Parrafo>
           )}
           <Input
             type="textarea"
@@ -105,9 +125,9 @@ const Contacto = () => {
             rows="10"
           />
           {fails.cuerpo ? (
-            <p style={{ color: "red" }}> {fails.cuerpo}</p>
+            <Parrafo rojo> {fails.cuerpo}</Parrafo>
           ) : (
-            <p>Todo ok </p>
+            <Parrafo>👌ok </Parrafo>
           )}
 
           <ContenedorBoton>
@@ -115,7 +135,7 @@ const Contacto = () => {
               type="submit"
               to="/home"
               disabled={
-                fails.email || fails.asunto || fails.cuerpo ? true : false
+                fails.username || fails.email || fails.asunto || fails.cuerpo ? true : false
               }
             >
               Enviar

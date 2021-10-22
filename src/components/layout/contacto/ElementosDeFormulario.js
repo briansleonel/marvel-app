@@ -26,7 +26,14 @@ font-style: italic;
 font-size: 2em;
 text-transform: uppercase;
 letter-spacing: .1em;
-`
+`;
+const Parrafo = styled.p`
+color: ${(props) => props.rojo ? '#ec1d24' :'#64C132'};
+font-size: 1.0em;
+@media(max-width: 60rem){ /* 950px */
+    font-size: 0.8em;
+}
+`;
 
 const ContenedorFormulario = styled.div`
 background: #fff;
@@ -57,7 +64,7 @@ const ContenedorTexto = styled.div`
     outline: none;
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 0.8rem; /* 24px */
+        font-size: 0.5rem; /* 24px */
     }
 `;
 const Formulario = styled.form`
@@ -81,14 +88,14 @@ const Formulario = styled.form`
 `;
  
 const Input = styled.input`
-    font-size: 1.3em; /* 40px */
+    font-size: 1.1em; /* 40px */
     border: none;
     border-bottom: 2px solid #F6F1F0;
     outline: none;
     padding: 0;
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 0.8rem; /* 24px */
+        font-size: 0.7rem; /* 24px */
     }
 `;
  
@@ -125,6 +132,11 @@ const Boton = styled(Link)`
     outline: none;
     display: flex;
     justify-content: center;
+
+    @media(max-width: 60rem){ /* 950px */
+        padding: 0.7em;
+        font-size: 1.0rem; /* 24px */
+    }
 `;
 
-export {ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo};
+export {ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo, Parrafo};
