@@ -6,7 +6,7 @@ import Character from "./components/Home/character/character";
 import Home from "./components/Home/home";
 import LandingPage from "./components/landingPage/landingPage";
 import Contacto from "./components/layout/contacto/Contacto";
-import Error404 from "./components/layout/Error404";
+import Error404 from "./components/layout/error404/error404";
 import Navbar from "./components/layout/navbar/navbar";
 
 function App() {
