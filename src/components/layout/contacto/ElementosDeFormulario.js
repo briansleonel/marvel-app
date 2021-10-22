@@ -15,16 +15,29 @@ const ContenedorFiltros = styled.div`
         }
     }
 `;
+
+const Titulo = styled.h1`
+margin: 0;
+text-align: center;
+padding-bottom: .5em;
+border-bottom: 2px solid #ec1d24;
+font-weight: 500;
+font-style: italic;
+font-size: 2em;
+text-transform: uppercase;
+letter-spacing: .1em;
+`
+
 const ContenedorFormulario = styled.div`
 background: #fff;
 width: 60%;
 max-width: 50rem; /*1110px*/
-height: 90vh;
 max-height: 80rem;  /* 80px */
 overflow-y: auto;
-box-shadow: 0px 1.25rem 2.5rem rgba(0,0,0,.05);
+box-shadow: 0px 1.25rem 2.5rem rgba(0,0,0,.1);
 border-radius: 0.625rem; /* 10px */
-margin: 20px auto 20px auto;
+margin: 3em auto;
+padding: 2em;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -39,9 +52,8 @@ z-index: 100;
 }
 `;
 const ContenedorTexto = styled.div`
-    font-size: 1.0rem; 
+    font-size: 1em; 
     border: none;
-    border-bottom: 2px solid #F6F1F0;
     outline: none;
  
     @media(max-width: 60rem){ /* 950px */
@@ -49,7 +61,6 @@ const ContenedorTexto = styled.div`
     }
 `;
 const Formulario = styled.form`
-    padding: 0 2.5rem; /* 40px */
  
     height: 80%;
     display: flex;
@@ -58,8 +69,7 @@ const Formulario = styled.form`
     input {
         width: 100%;
         text-align: center;
-        padding: 2.1rem 0;
-        font-family: 'Work Sans', sans-serif;
+        padding: 1em 0;
         &::placeholder {
             color: rgba(0,0,0,.2);
         }
@@ -71,11 +81,11 @@ const Formulario = styled.form`
 `;
  
 const Input = styled.input`
-    font-size: 1.0rem; /* 40px */
-    text-transform: uppercase;
+    font-size: 1.3em; /* 40px */
     border: none;
     border-bottom: 2px solid #F6F1F0;
     outline: none;
+    padding: 0;
  
     @media(max-width: 60rem){ /* 950px */
         font-size: 0.8rem; /* 24px */
@@ -89,22 +99,23 @@ const InputGrande = styled(Input)`
  
 const ContenedorBoton = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0;  /* 40px */
+    margin-top: 3em;
 `;
 const Boton = styled(Link)`
 
-    background: ${(props) => props.disabled ? 'gray' : props.rojo ? '#D30000' : '#006924'};
-    width: 15.62rem
-    margin-left: 1.25rem; /* 20px */
+    background: ${(props) => props.disabled ? 'gray' : props.rojo ? '#ec1d24' : '#64C132'};
+    width: 7em;
+    text-align: center;
     border: none;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: .2em; /* 10px */
     color: #fff;
-    font-family: 'Work Sans', sans-serif;
     height: 2.0rem; /* 60px */
-    padding: 0.05rem 1.60rem; /* 20px 30px */
-    font-size: 1.0rem; /* 20px */
-    font-weight: 500;
+    padding: 1em; /* 20px 30px */
+    font-size: 1.3em; /* 20px */
+    font-weight: 300;
+    text-transform: uppercase;
     cursor: ${(props) => props.disabled ? 'no-drop' :'pointer'};
     pointer-events: ${(props) => props.disabled ? 'none' :'auto'};
     text-decoration: none;
@@ -112,7 +123,8 @@ const Boton = styled(Link)`
     justify-content: space-between;
     align-items: center;
     outline: none;
-    
+    display: flex;
+    justify-content: center;
 `;
 
-export {ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton};
+export {ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo};
