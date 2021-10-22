@@ -12,17 +12,17 @@ export function FooterContainer() {
             <Footer.Wrapper>
             <Footer.Row>
                 <Footer.Column>
-                    <Footer.Logo><Link to='home'><img className="Image" href="#" src={logo} alt="Logo" /></Link></Footer.Logo>
+                    <Footer.Logo><Link to='/'><img className="Image" href="#" src={logo} alt="Logo" /></Link></Footer.Logo>
                 </Footer.Column>
 
                 <Footer.Column>
-                <Footer.Title>Nosotros</Footer.Title>
-                    <Footer.Link href={"/about"}>About</Footer.Link>
+                <Footer.Title>Acerca de</Footer.Title>
+                    <Footer.Link href={"/about"}>Desarrolladores</Footer.Link>
                 </Footer.Column>
 
                 <Footer.Column>
                 <Footer.Title>Contacto</Footer.Title>
-                    <Footer.Link href={"/contacto"}>Contacto</Footer.Link>
+                    <Footer.Link href={"/contacto"}>Contactanos</Footer.Link>
                 </Footer.Column>
 
                 <Footer.Column>

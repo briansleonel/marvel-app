@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    padding: 0;
     background-color: #f7f8fc;
     font-family: "Roboto", sans-serif;
     color: #10182f;
@@ -12,9 +13,9 @@
   width: 1040px;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin: 4em auto;
 }
 .card {
-  margin: 50px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -38,8 +39,8 @@
 .tag {
   background: #cccccc;
   border-radius: 50px;
-  font-size: 12px;
-  margin: 0;
+  font-size: 1em;
+  margin: 0 auto;
   color: #fff;
   padding: 2px 10px;
   text-transform: uppercase;
@@ -108,7 +109,8 @@
     -webkit-transform: scale(2.2);
     color: #ff003c;
     background: -webkit-linear-gradient(45deg, #ff003c, #c648c8);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: border-box;
+    -webkit-background-clip: text;
     transition: all 265ms ease-in;
   }

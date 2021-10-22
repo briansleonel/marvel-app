@@ -2,6 +2,7 @@ import Axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
+import Loader from "../../layout/loader/loader";
 
 import styles from './section.module.css'
 
@@ -10,16 +11,15 @@ const Section = (props) => {
     //const [limit, setLimit] = useState(20);
     const [response, setResponse] = useState(null);
 
+    const [loadReults, setLoadResults] = useState(true);
+
     useEffect(() => {
-        Axios.get(
-            `${process.env.REACT_APP_API_URL}/characters?ts=${process.env.REACT_APP_TS}&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_API_HASH}`
-        )
-            .then(res => { setResponse(res.data) })
-            .catch(err => console.log(err))
-        
     }, [])
 
     useEffect(() => {
+        setLoadResults(true);
+        window.scrollTo(0,0);
+        
         let URI = `${process.env.REACT_APP_API_URL}/characters?ts=${process.env.REACT_APP_TS}&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_API_HASH}`
         
         if(props.searchName) {
@@ -29,8 +29,7 @@ const Section = (props) => {
         Axios.get(
             `${URI}&limit=${props.limit}&orderBy=${props.order === 'ASC' ? 'name' : '-name'}`
         ) 
-            .then(res => { console.log(res.data)
-                setResponse(res.data) })
+            .then(res => {setResponse(res.data); setLoadResults(false);})
             .catch(err => console.log(err))
     }, [props.searchName, props.limit, props.order])
 
@@ -55,7 +54,7 @@ const Section = (props) => {
             
             
             {
-                props.searchName && response !== null ? 
+                props.searchName && !loadReults ? 
                     <div className={styles.infoSearch}>
                         <p>Se muestran <span> {response.data.results.length} </span> coincidencias para <span>{props.searchName}</span></p>
                     </div>
@@ -63,7 +62,7 @@ const Section = (props) => {
             }
 
             {
-                response !== null ?
+                !loadReults ?
                     response.data.results.length === 0 ?
                     <SearchEmpty /> :
                     <>
@@ -75,10 +74,8 @@ const Section = (props) => {
                             <a href="http://marvel.com\"> {response.attributionText} </a>
                         </div>
                     </>
-                : <h5>Cargando...</h5>
+                : <Loader />
             }
-
-            
         </section>
     )
 }
@@ -101,4 +98,5 @@ const SearchEmpty = () => {
         </div>
     )
 }
+
 export default Section;

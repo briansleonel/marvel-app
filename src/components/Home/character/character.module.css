@@ -11,6 +11,23 @@
     width: 100%;
     margin-right: 1em
 }
+
+.containerAvailable {
+    display: flex;
+}
+
+.buttonEye {
+    padding: .3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconEye {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .title {
     margin: 0;
     text-align: center;
@@ -30,4 +47,109 @@
 
 .description span {
     font-weight: 600;
+}
+
+.containerButtonBackToHome {
+    width: 100%;
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonBackToHome {
+    padding: .5em 1em;
+    background-color: #f7363c;
+    color: #fff;
+    border-radius: .2em;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.buttonBackToHome:hover {
+    background-color: #ec1d24;
+}
+
+.dataProvider {
+    width: 100%;
+    padding-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.dataProvider a {
+    text-decoration: none;
+    color: #283747;
+    text-align: center;
+    font-size: 1em;
+}
+
+.containerSelect {
+    display: flex;
+    width: 20%;
+    float: left;
+}
+
+.containerResults {
+    float: right;
+    width: 80%;
+}
+
+.items {
+    font-size: 1.2em;
+    font-weight: 300;
+    list-style: none;
+}
+
+.items::before {
+    padding-bottom: 2ex;
+    content: "\2022"; /* Insertamos el marcador */
+    padding-right: 8px; /* Establecemos el espacio entre las viñetas y el list item */
+    color: #ec1d24;
+}
+
+.containerSelect label {
+    margin-right: .5em;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.selectContent {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+}
+
+.selectContent::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: #ec1d24;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    justify-self: end;
+    margin-right: .4em;
+}
+  
+.select, .selectContent:after {
+    grid-area: select;
+}
+
+.select {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: .2em 1.5em .2em .5em;
+    font-size: 1.2em;
+    line-height: inherit;
+    appearance: none;
+    font-weight: lighter;
+}
+
+.select:active, .select:focus {
+    border: 1px solid #ec1d24;
+    outline: none;
+    border-radius: 5px;
+}
+
+.select option {
+    border: none;
 }

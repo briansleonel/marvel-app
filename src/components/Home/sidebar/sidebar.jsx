@@ -17,7 +17,7 @@ const SideBar = (props) => {
 
     const onClickSearch = (event) => {
         event.preventDefault();
-        props.setSearchName(inputSearchName)
+        props.setSearchName(inputSearchName);
     }
 
     const onClickResetFilters = (event) => {
@@ -34,7 +34,8 @@ const SideBar = (props) => {
         <section className={styles.containerSideBar}>
             <h2 className={styles.title}>Filtros</h2>
 
-            <form id="filters">
+            <div id="filters">
+
                 <div className={styles.orderByContent}>
                     <label htmlFor="orderBy">Ordenar por nombre</label>
                     <div className={styles.selectContent}>
@@ -93,7 +94,7 @@ const SideBar = (props) => {
                 <div className={styles.buttonReset}>
                     <button type='button' onClick={event => onClickResetFilters(event)}>Limpiar filtros</button>
                 </div>
-            </form>
+            </div>
             
         </section>
     )
