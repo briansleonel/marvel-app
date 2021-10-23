@@ -8,7 +8,8 @@ import {
   Boton,
   ContenedorTexto,
   Titulo,
-  Parrafo
+  Parrafo,
+  InputTextArea
 } from "./ElementosDeFormulario";
 
 const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
@@ -48,7 +49,7 @@ const Contacto = () => {
 
   const [fails, setFails] = useState({
     username: "Debes ingresar un nombre",
-    email: "Debes ingresar un correo valido",
+    email: "Debes ingresar un correo válido",
     asunto: "Debes ingresar un asunto",
     cuerpo: "Debe ingresar un mensaje",
   });
@@ -79,7 +80,7 @@ const Contacto = () => {
           <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
         </ContenedorTexto>
         <Formulario onSubmit={handleSubmit}>
-        <Input
+          <Input
             type="text"
             name="username"
             placeholder="Tu nombre..."
@@ -115,14 +116,14 @@ const Contacto = () => {
           ) : (
             <Parrafo>👌ok </Parrafo>
           )}
-          <Input
+
+          <InputTextArea 
             type="textarea"
             name="cuerpo"
             placeholder="Tu mensaje..."
             value={state.cuerpo}
             onChange={handleChange}
-            cols="30"
-            rows="10"
+            rows="5"
           />
           {fails.cuerpo ? (
             <Parrafo rojo> {fails.cuerpo}</Parrafo>

@@ -6,6 +6,7 @@ import styles from './character.module.css'
 
 import Loader from "../../layout/loader/loader";
 import { Link } from "react-router-dom";
+import {FcInfo} from 'react-icons/fc'
 
 const Character = (props) => {
 
@@ -46,14 +47,18 @@ const CardCharacter = (props) => {
     }
 
     const itemsMap = (props) => {
-        return(
-            <ul>
-                {
-                    props.items.map((element, index) => <li key={index} className={styles.items}>{element.name}</li>
-                    )
-                }
-            </ul>
-        )
+        if(props.items.length !== 0) {
+            return(
+                <ul>
+                    {
+                        props.items.map((element, index) => <li key={index} className={styles.items}>{element.name}</li>
+                        )
+                    }
+                </ul>
+            )
+        } else {
+            return <h4 className={styles.emptyData}> <FcInfo /> No hay datos para mostrar</h4>
+        }
     }
 
     return(

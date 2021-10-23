@@ -5,6 +5,7 @@ import { useState } from "react/cjs/react.development";
 import Loader from "../../layout/loader/loader";
 
 import styles from './section.module.css'
+import {FcInfo} from 'react-icons/fc'
 
 const Section = (props) => {
 
@@ -94,7 +95,7 @@ const CardCharacter = (props) => {
 const SearchEmpty = () => {
     return(
         <div className={styles.searchEmpty}>
-            <p>No hay personajes que coincidan con tu búsqueda.</p>
+            <FcInfo className={styles.iconInfo} /> <p>No hay personajes que coincidan con tu búsqueda.</p>
         </div>
     )
 }

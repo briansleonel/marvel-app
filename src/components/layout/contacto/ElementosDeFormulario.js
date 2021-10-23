@@ -93,11 +93,28 @@ const Input = styled.input`
     border-bottom: 2px solid #F6F1F0;
     outline: none;
     padding: 0;
+    font-weight: 500;
+    margin-top: 1em;
  
     @media(max-width: 60rem){ /* 950px */
         font-size: 0.7rem; /* 24px */
     }
 `;
+
+const InputTextArea = styled.textarea`
+    font-size: 1.1em; /* 40px */
+    border: none;
+    border-bottom: 2px solid #F6F1F0;
+    outline: none;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 1em;
+
+    @media(max-width: 60rem){ /* 950px */
+        font-size: 0.7rem; /* 24px */
+    }
+`
  
 const InputGrande = styled(Input)`
     font-size: 4.37rem; /* 70px */
@@ -139,4 +156,4 @@ const Boton = styled(Link)`
     }
 `;
 
-export {ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo, Parrafo};
+export {InputTextArea, ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo, Parrafo};
