@@ -99,7 +99,7 @@ const Input = styled.input`
     &:hover{
         outline: 0.1rem solid #32a1ce;
     }
-      
+    
     @media(max-width: 60rem){ /* 950px */
         font-size: 0.7rem; /* 24px */
     }

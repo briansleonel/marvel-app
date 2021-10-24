@@ -70,8 +70,13 @@
 .searchEmpty {
     text-align: center;
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 400;
     margin: 2em auto;
+}
+
+.iconInfo {
+    font-size: 2em;
+    margin: 0;
 }
 
 .dataProvider {
