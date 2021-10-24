@@ -81,7 +81,7 @@ const Contacto = () => {
       title: '¿Desesas enviar este mensaje?',
       confirmButtonColor: '#64C132',
       cancelButtonColor: '#ec1d24',
-      cancelButtonText: `NO`,
+      cancelButtonText: `No`,
       showCancelButton: true,
       confirmButtonText: 'Ok'
     }).then((result) => {
