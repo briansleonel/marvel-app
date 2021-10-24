@@ -10,8 +10,7 @@ import {
   Boton,
   ContenedorTexto,
   Titulo,
-  Parrafo,
-  InputTextArea
+  Parrafo
 } from "./ElementosDeFormulario";
 
 const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
@@ -53,7 +52,7 @@ const Contacto = () => {
 
   const [fails, setFails] = useState({
     username: "Debes ingresar un nombre",
-    email: "Debes ingresar un correo válido",
+    email: "Debes ingresar un correo valido",
     asunto: "Debes ingresar un asunto",
     cuerpo: "Debe ingresar un mensaje",
   });
@@ -82,8 +81,8 @@ const Contacto = () => {
       title: '¿Desesas enviar este mensaje?',
       confirmButtonColor: '#64C132',
       cancelButtonColor: '#ec1d24',
+      cancelButtonText: `NO`,
       showCancelButton: true,
-      cancelButtonText: `No`,
       confirmButtonText: 'Ok'
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
@@ -136,7 +135,7 @@ const Contacto = () => {
           <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
         </ContenedorTexto>
         <Formulario onSubmit={handleSubmit}>
-          <Input
+        <Input
             type="text"
             name="username"
             placeholder="Tu nombre..."
@@ -172,14 +171,14 @@ const Contacto = () => {
           ) : (
             <Parrafo>👌ok </Parrafo>
           )}
-
-          <InputTextArea 
+          <Input
             type="textarea"
             name="cuerpo"
             placeholder="Tu mensaje..."
             value={state.cuerpo}
             onChange={handleChange}
-            rows="5"
+            cols="30"
+            rows="10"
           />
           {fails.cuerpo ? (
             <Parrafo rojo> {fails.cuerpo}</Parrafo>
