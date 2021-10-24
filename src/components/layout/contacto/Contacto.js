@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useHistory } from "react-router";
+import Swal from "sweetalert2";
 
 import {
   ContenedorFormulario,
@@ -39,6 +41,8 @@ const validators = (input) => {
 };
 
 const Contacto = () => {
+  const history = useHistory();
+
   const [state, setState] = useState({
     username: "",  
     email: "",
@@ -52,11 +56,14 @@ const Contacto = () => {
     asunto: "Debes ingresar un asunto",
     cuerpo: "Debe ingresar un mensaje",
   });
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+   
   };
   const handleChange = (e) => {
+    
     setState({
       ...state,
       [e.target.name]: e.target.value,
@@ -68,6 +75,55 @@ const Contacto = () => {
         [e.target.name]: e.target.value,
       })
     );
+  };
+  const mostrarMensaje1 = ()=>{
+    Swal.fire({
+      title: '¿Desesas enviar este mensaje?',
+      confirmButtonColor: '#64C132',
+      cancelButtonColor: '#ec1d24',
+      showCancelButton: true,
+      cancelButtonText: `No`,
+      confirmButtonText: 'Ok'
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: 'top',
+          icon: 'success',
+          title: 'Tu mensaje fue enviado correctamente',
+          showConfirmButton: false,
+          timer: 1300
+        })
+        setTimeout(() => {
+          history.push(`/home`);
+        }, 1350)
+      } 
+    })
+    
+  };
+  const mostrarMensaje2 = ()=>{
+    Swal.fire({
+      title: '¿Desesas salir del formulario?',
+      confirmButtonColor: '#64C132',
+      cancelButtonColor: '#ec1d24',
+      showCancelButton: true,
+      cancelButtonText: `No`,
+      confirmButtonText: 'Ok'
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: 'Se cancelo tu mensaje',
+          showConfirmButton: false,
+          timer: 1300
+        })
+        setTimeout(() => {
+          history.push(`/home`);
+        }, 1350)
+      } 
+    })
   };
   return (
     <>
@@ -132,17 +188,24 @@ const Contacto = () => {
 
           <ContenedorBoton>
             <Boton
+              as="button"
               type="submit"
-              to="/home"
+              onClick={()=>mostrarMensaje1()}
               disabled={
                 fails.username || fails.email || fails.asunto || fails.cuerpo ? true : false
               }
             >
               Enviar
             </Boton>
-            <Boton type="submit" rojo to="/home">
+            <Boton 
+               as="button"
+               type="submit" 
+               onClick={()=>mostrarMensaje2()}
+               rojo 
+            >
               Cancelar
             </Boton>
+            
           </ContenedorBoton>
         </Formulario>
       </ContenedorFormulario>

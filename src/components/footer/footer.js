@@ -27,10 +27,10 @@ export function FooterContainer() {
 
                 <Footer.Column>
                 <Footer.Title>Social</Footer.Title>
-                    <Footer.Link href="https://www.facebook.com/gonzalo.hitachi" target="_blank"><Icon className="fab fa-facebook-f" />Facebook</Footer.Link>
-                    <Footer.Link href="#"><Icon className="fab fa-instagram" />Instagram</Footer.Link>
-                    <Footer.Link href="#"><Icon className="fab fa-youtube" />Youtube</Footer.Link>
-                    <Footer.Link href="#"><Icon className="fab fa-twitter" />Twitter</Footer.Link>
+                    <Footer.Link href="https://www.facebook.com/gonzalo.hitachi" target="_blank" rel="noreferrer"><Icon className="fab fa-facebook-f" />Facebook</Footer.Link>
+                    <Footer.Link href="https://www.instagram.com/gon_zalomatias/?hl=es" target="_blank" rel="noreferrer"><Icon className="fab fa-instagram" />Instagram</Footer.Link>
+                    <Footer.Link href="https://www.youtube.com/channel/UC8zXh0l61yBmwPEZ_7jZVOw" target="_blank" rel="noreferrer"><Icon className="fab fa-youtube" />Youtube</Footer.Link>
+                    <Footer.Link href="https://twitter.com/" target="_blank" rel="noreferrer"><Icon className="fab fa-twitter" />Twitter</Footer.Link>
                 </Footer.Column>
             </Footer.Row>
             

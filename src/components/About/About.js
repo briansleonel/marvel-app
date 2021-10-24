@@ -30,22 +30,22 @@ const About = () => {
             </div>
             <ul className="social-icons">
               <li>
-                <a href="https://www.instagram.com/briansleonel/">
+                <a href="https://www.instagram.com/briansleonel/" target="_blank" rel="noreferrer">
                   <i className="fab fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/briansleonel">
+                <a href="https://twitter.com/briansleonel" target="_blank" rel="noreferrer">
                   <i className="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/briansleonel/">
+                <a href="https://www.linkedin.com/in/briansleonel/" target="_blank" rel="noreferrer">
                   <i className="fab fa-linkedin"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/briansleonel/">
+                <a href="https://www.facebook.com/briansleonel/" target="_blank" rel="noreferrer">
                   <i className="fab fa-facebook"></i>
                 </a>
               </li>
@@ -68,27 +68,27 @@ const About = () => {
                 <b>Correo: </b> matias.donaire.86@gmail.com
               </p>
               <p>
-                <b>Hobby: </b> Programar en mis tiempos libres
+                <b>Hobby: </b> Programar - Ver anime y doramas 
               </p>
             </div>
             <ul className="social-icons">
               <li>
-                <a href="https://www.facebook.com/gonzalo.hitachi">
+                <a href="https://www.instagram.com/gon_zalomatias" target="_blank" rel="noreferrer">
                   <i className="fab fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/gonzalo.hitachi">
+                <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                   <i className="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/gonzalo.hitachi">
+                <a href="https://www.linkedin.com/in/matias-gonzalo-donaire-3a6080221/" target="_blank" rel="noreferrer">
                   <i className="fab fa-linkedin"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/gonzalo.hitachi">
+                <a href="https://www.facebook.com/gonzalo.hitachi" target="_blank" rel="noreferrer">
                   <i className="fab fa-facebook"></i>
                 </a>
               </li>

@@ -76,7 +76,7 @@ const Formulario = styled.form`
     input {
         width: 100%;
         text-align: center;
-        padding: 1em 0;
+        padding:1em 0;
         &::placeholder {
             color: rgba(0,0,0,.2);
         }
@@ -91,13 +91,20 @@ const Input = styled.input`
     font-size: 1.1em; /* 40px */
     border: none;
     border-bottom: 2px solid #F6F1F0;
-    outline: none;
+    outline: 0.05rem solid #32a1ce;
     padding: 0;
- 
+    &:focus{
+        outline: 0.1rem solid #32a1ce;
+    }
+    &:hover{
+        outline: 0.1rem solid #32a1ce;
+    }
+      
     @media(max-width: 60rem){ /* 950px */
         font-size: 0.7rem; /* 24px */
     }
 `;
+
  
 const InputGrande = styled(Input)`
     font-size: 4.37rem; /* 70px */
@@ -112,7 +119,7 @@ const ContenedorBoton = styled.div`
 `;
 const Boton = styled(Link)`
 
-    background: ${(props) => props.disabled ? 'gray' : props.rojo ? '#ec1d24' : '#64C132'};
+    background: ${(props) => props.disabled ? 'gray' : props.rojo ? '#F22B32' : '#6FD538'};
     width: 7em;
     text-align: center;
     border: none;
@@ -132,7 +139,9 @@ const Boton = styled(Link)`
     outline: none;
     display: flex;
     justify-content: center;
-
+    &:hover{
+        background: ${(props) => props.disabled ? 'gray' : props.rojo ? '#ec1d24' : '#64C132'};
+    }
     @media(max-width: 60rem){ /* 950px */
         padding: 0.7em;
         font-size: 1.0rem; /* 24px */
