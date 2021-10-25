@@ -64,27 +64,27 @@ const CardCharacter = (props) => {
     return(
         <section className={styles.container}>
             <div className={styles.contentTitleImg}>
+                <img src={`${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`} alt="" />
                 <div>
                     <h2 className={styles.title}> {name} </h2>
-                    <p className={styles.description}> <span>Descripción:</span> {description} </p>
+                    <p className={styles.description}> <span>Description:</span> {description ? description : <>&nbsp;<FcInfo /> Description not available</>} </p>
                     
                     <div className={styles.containerAvailable}>
                         <div>
-                            <p className={styles.description}> <span>Comics disponibles:</span> {comics.available} </p>
-                            <p className={styles.description}> <span>Series disponibles:</span> {series.available} </p>
+                            <p className={styles.description}> <span>Available comics:</span> {comics.available} </p>
+                            <p className={styles.description}> <span>Available series:</span> {series.available} </p>
                         </div>
                         <div>
-                            <p className={styles.description}> <span>Historias disponibles:</span> {stories.available} </p>
-                            <p className={styles.description}> <span>Eventos disponibles:</span> {events.available} </p>
+                            <p className={styles.description}> <span>Available stories:</span> {stories.available} </p>
+                            <p className={styles.description}> <span>Available events:</span> {events.available} </p>
                         </div>
                     </div>
                 </div>
-                <img src={`${thumbnail.path}/portrait_incredible.${thumbnail.extension}`} alt="" />
             </div>
 
             <div className={styles.showFilter}>
                 <div className={styles.containerSelect}>
-                        <label htmlFor="see">Mostrar</label>
+                        <label htmlFor="see">Show</label>
                         <div className={styles.selectContent}>
                             <select 
                                 id="see" 
@@ -94,9 +94,9 @@ const CardCharacter = (props) => {
                                 onChange={event => onChange(event)}
                             >
                                 <option value="comics" >Comics</option>
-                                <option value="stories" >Historias</option>
+                                <option value="stories" >Stories</option>
                                 <option value="series" >Series</option>
-                                <option value="events" >Eventos</option>
+                                <option value="events" >Events</option>
                             </select>
                         </div>
                 </div>
@@ -110,7 +110,7 @@ const CardCharacter = (props) => {
             </div>
 
             <div className={styles.containerButtonBackToHome}>
-                <Link className={styles.buttonBackToHome} to='/home'>Ir al Home</Link>
+                <Link className={styles.buttonBackToHome} to='/home'>Go to Home</Link>
             </div>
         </section>
     )

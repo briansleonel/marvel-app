@@ -16,13 +16,13 @@ export function FooterContainer() {
                 </Footer.Column>
 
                 <Footer.Column>
-                <Footer.Title>Acerca de</Footer.Title>
-                    <Footer.Link href={"/about"}>Desarrolladores</Footer.Link>
+                <Footer.Title>About us</Footer.Title>
+                    <Footer.Link href={"/about"}>Developers</Footer.Link>
                 </Footer.Column>
 
                 <Footer.Column>
-                <Footer.Title>Contacto</Footer.Title>
-                    <Footer.Link href={"/contacto"}>Contactanos</Footer.Link>
+                <Footer.Title>Contact</Footer.Title>
+                    <Footer.Link href={"/contacto"}>Contact us</Footer.Link>
                 </Footer.Column>
 
                 <Footer.Column>

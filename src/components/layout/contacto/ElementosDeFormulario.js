@@ -37,13 +37,13 @@ font-size: 1.0em;
 
 const ContenedorFormulario = styled.div`
 background: #fff;
-width: 60%;
+width: 40%;
 max-width: 50rem; /*1110px*/
 max-height: 80rem;  /* 80px */
 overflow-y: auto;
 box-shadow: 0px 1.25rem 2.5rem rgba(0,0,0,.1);
 border-radius: 0.625rem; /* 10px */
-margin: 3em auto;
+margin: 4em auto;
 padding: 2em;
 display: flex;
 flex-direction: column;
@@ -52,10 +52,8 @@ position: relative;
 z-index: 100;
 
 @media(max-width: 60rem){ /* 950px */
-    height: 85vh;
-    max-height: 40rem;  /* 80px */
-    max-height: none;
     overflow-y:auto;
+    width: 100%;
 }
 `;
 const ContenedorTexto = styled.div`
@@ -90,20 +88,37 @@ const Formulario = styled.form`
 const Input = styled.input`
     font-size: 1.1em; /* 40px */
     border: none;
-    border-bottom: 2px solid #F6F1F0;
-    outline: 0.05rem solid #32a1ce;
+    outline: 0.05rem solid #85929E;
     padding: 0;
+    border-radius: 5px;
+    font-weight: 400;
     &:focus{
-        outline: 0.1rem solid #32a1ce;
+        outline: 0.1rem solid #2E4053;
     }
     &:hover{
-        outline: 0.1rem solid #32a1ce;
+        outline: 0.1rem solid #2E4053;
     }
     
     @media(max-width: 60rem){ /* 950px */
         font-size: 0.7rem; /* 24px */
     }
 `;
+
+const InputTextArea = styled.textarea`
+    font-size: 1.1em; /* 40px */
+    border: none;
+    outline: 0.05rem solid #85929E;
+    border-radius: 5px;
+    padding: .5em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-top: 1em;
+    max-width: 100%;
+    min-width: 100%;
+    @media(max-width: 60rem){ /* 950px */
+        font-size: 0.7rem; /* 24px */
+    }
+`
 
  
 const InputGrande = styled(Input)`
@@ -148,4 +163,4 @@ const Boton = styled(Link)`
     }
 `;
 
-export {ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo, Parrafo};
+export {InputTextArea, ContenedorFiltros,ContenedorFormulario, Formulario,ContenedorTexto, Input, InputGrande, ContenedorBoton, Boton, Titulo, Parrafo};

@@ -1,7 +1,14 @@
 .containerHome {
-    width: 100%;
-    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: 25% 72%;
+    margin: 4em 2em;
+}
+
+@media (max-width: 500px) {
+    .containerHome {
+        margin: 4em 0;
+        display: block;
+    }
 }

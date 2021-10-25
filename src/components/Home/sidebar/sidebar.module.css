@@ -1,8 +1,9 @@
 .containerSideBar {
-    width: 30%;
-    background-color: #ffff;
-    margin: 3em 0;
-    padding: 0 2em;
+    margin: 0;
+    padding: 1.5em;
+    max-height: 23em;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: .3em;
     border-right: 1px solid rgba(52, 58, 64, .4);
 }
 
@@ -141,4 +142,11 @@
 .buttonReset button:hover {
     background-color: #ec1d24;
     cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .containerSideBar {
+        margin-bottom: 3em;
+        max-height: 100%;
+    }
 }

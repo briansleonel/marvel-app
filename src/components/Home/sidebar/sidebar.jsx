@@ -32,12 +32,12 @@ const SideBar = (props) => {
 
     return(
         <section className={styles.containerSideBar}>
-            <h2 className={styles.title}>Filtros</h2>
+            <h2 className={styles.title}>Filters</h2>
 
             <div id="filters">
 
                 <div className={styles.orderByContent}>
-                    <label htmlFor="orderBy">Ordenar por nombre</label>
+                    <label htmlFor="orderBy">Order by name</label>
                     <div className={styles.selectContent}>
                         <select 
                             id="orderBy" 
@@ -46,14 +46,14 @@ const SideBar = (props) => {
                             value={props.order}
                             onChange={(event) => onChangeOrder(event)}
                         >
-                            <option value="ASC" >Ascendente</option>
-                            <option value="DESC" >Descendente</option>
+                            <option value="ASC" >A - Z</option>
+                            <option value="DESC" >Z - A</option>
                         </select>
                     </div>
                 </div>
 
                 <div className={styles.limitCharacters}>
-                    <label htmlFor="limit" className={styles.labelStart}> Mostrar </label>
+                    <label htmlFor="limit" className={styles.labelStart}> Show </label>
 
                     <div className={styles.selectContent}>
                         <select 
@@ -70,7 +70,7 @@ const SideBar = (props) => {
                             <option value="30" >30</option>
                         </select>
                     </div>
-                    <label htmlFor="limit" className={styles.labelEnd}> personajes </label>
+                    <label htmlFor="limit" className={styles.labelEnd}> characters </label>
                 </div>
 
                 <div className={styles.search}>
@@ -92,7 +92,7 @@ const SideBar = (props) => {
                 </div>
 
                 <div className={styles.buttonReset}>
-                    <button type='button' onClick={event => onClickResetFilters(event)}>Limpiar filtros</button>
+                    <button type='button' onClick={event => onClickResetFilters(event)}>Reset filters</button>
                 </div>
             </div>
             

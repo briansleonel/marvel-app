@@ -51,13 +51,13 @@ const Section = (props) => {
 
     return(
         <section className={styles.sectionContainer}>
-            <h2>Personajes</h2>
+            <h2>Characters</h2>
             
             
             {
                 props.searchName && !loadReults ? 
                     <div className={styles.infoSearch}>
-                        <p>Se muestran <span> {response.data.results.length} </span> coincidencias para <span>{props.searchName}</span></p>
+                        <p><span> {response.data.results.length} </span> matches found for <span>{props.searchName}</span></p>
                     </div>
                 : <></>
             }
@@ -86,8 +86,8 @@ const CardCharacter = (props) => {
 
     return(
         <div className={styles.cardContainer}>
-            <img src={`${thumbnail.path}/standard_fantastic.${thumbnail.extension}`} title={`Imagen de ${name}`} alt={`Imagen de ${name}`} />
-            <h4> {name} </h4>
+            <img src={`${thumbnail.path}/standard_fantastic.${thumbnail.extension}`} title={`Image of ${name}`} alt={`Imagen de ${name}`} />
+            <p> {name} </p>
         </div>
     )
 }
@@ -95,7 +95,7 @@ const CardCharacter = (props) => {
 const SearchEmpty = () => {
     return(
         <div className={styles.searchEmpty}>
-            <FcInfo className={styles.iconInfo} /> <p>No hay personajes que coincidan con tu búsqueda.</p>
+            <FcInfo className={styles.iconInfo} /> <p>There are no characters matching your search.</p>
         </div>
     )
 }
