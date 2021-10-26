@@ -26,13 +26,17 @@ const Section = (props) => {
         if(props.searchName) {
             URI += `&nameStartsWith=${props.searchName}`
         }
+
+        if(props.comic) {
+            URI += `&comics=${props.comic}`
+        }
         
         Axios.get(
             `${URI}&limit=${props.limit}&orderBy=${props.order === 'ASC' ? 'name' : '-name'}`
         ) 
             .then(res => {setResponse(res.data); setLoadResults(false);})
             .catch(err => console.log(err))
-    }, [props.searchName, props.limit, props.order])
+    }, [props.searchName, props.limit, props.order, props.comic])
 
     const characters = () => {
         if(response === null) {

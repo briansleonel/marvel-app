@@ -11,6 +11,8 @@ const Home = (props) => {
 
     const [limit, setLimit] = useState(20);
 
+    const [comicID, setComicID] = useState('');
+
     const resetFilters = () => {
         setOrder('ASC');
         setSearchName('');
@@ -26,12 +28,14 @@ const Home = (props) => {
                 limit={limit}
                 setLimit={state => setLimit(state)}
                 reset={resetFilters}
+                setComicID={state => setComicID(state)}
             />
 
             <Section 
                 order={order} 
                 searchName={searchName}
                 limit={limit}
+                comic={comicID}
             />
         </div>
     )
