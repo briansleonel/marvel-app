@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import Loader from "../../layout/loader/loader";
 
+import imgSpiderMan from './../../../assets/img/spider-man.png';
+
 import styles from './section.module.css'
-import {FcInfo} from 'react-icons/fc'
 
 const Section = (props) => {
 
@@ -99,9 +100,17 @@ const CardCharacter = (props) => {
 const SearchEmpty = () => {
     return(
         <div className={styles.searchEmpty}>
-            <FcInfo className={styles.iconInfo} /> <p>There are no characters matching your search.</p>
+            <img src={imgSpiderMan} alt="Spider-Man" />
+            <p>There are no characters matching your search.</p>
         </div>
     )
 }
+
+/*
+    <div className={styles.searchEmpty}>
+        <img src={imgSpiderMan} alt="Spider-Man" />
+        <FcInfo className={styles.iconInfo} /> <p>There are no characters matching your search.</p>
+    </div>
+*/
 
 export default Section;

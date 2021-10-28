@@ -71,7 +71,16 @@
     text-align: center;
     font-size: 2em;
     font-weight: 400;
-    margin: 2em auto;
+    margin: 0 auto .5em 0;
+}
+
+.searchEmpty img {
+    width: 12em;
+}
+
+.searchEmpty p {
+    margin: 0;
+    padding: 0;
 }
 
 .iconInfo {
@@ -93,11 +102,19 @@
     font-size: 1em;
 }
 
+.dataProvider a:hover {
+    color: #ec1d24;
+}
+
 @media (max-width: 500px) {
     .charactersContainer {
         display: grid;
         grid-gap: 2em;
         grid-template-columns: 100%;
         
+    }
+
+    .searchEmpty img {
+        width: 100%;
     }
 }

@@ -73,6 +73,10 @@
     font-size: 1em;
 }
 
+.dataProvider a:hover {
+    color: #ec1d24;
+}
+
 .containerSelect {
     display: flex;
     width: 20%;
